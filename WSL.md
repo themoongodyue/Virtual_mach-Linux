@@ -28,3 +28,20 @@
     netsh  interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=80 connectaddress=10.0.40.100 connectport=80
 ```   
 第一个ip是本机作为终端的ip，第二个ip是本机作为路由器的终端
+# 导出到其他位置
+ **1.导出分发版为tar文件到d盘**
+```
+wsl --export Ubuntu-20.04 d:\wsl-ubuntu20.04.tar
+```
+ **2.注销当前分发版**
+```
+wsl --unregister Ubuntu-20.04
+```
+ **3.重新导入并安装WSL在d:\wsl-ubuntu20.04**
+```
+wsl --import Ubuntu-20.04 d:\wsl-ubuntu20.04 d:\wsl-ubuntu20.04.tar --version 2
+```
+ **4.设置默认登陆用户为安装时用户名**
+```
+ubuntu2004 config --default-user Username #Username为默认用户名
+```
