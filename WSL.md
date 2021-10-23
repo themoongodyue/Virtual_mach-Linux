@@ -27,7 +27,7 @@
 ```
     netsh  interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=80 connectaddress=10.0.40.100 connectport=80
 ```   
-第一个ip是本机作为终端的ip，第二个ip是本机作为路由器的终端
+第一个ip是本机作为终端的ip，第二个ip是本机作为路由器的终端 **让防火墙准入端口**
 # 导出到其他位置
  **1.导出分发版为tar文件到d盘**
 ```
