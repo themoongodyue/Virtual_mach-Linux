@@ -91,5 +91,14 @@ GRUB_CMDLINE_LINUX="reboot=bios"
 GRUB_CMDLINE_LINUX="reboot=acpi"
 GRUB_CMDLINE_LINUX="reboot=pci"
 ```
+或者如下
+```bash
+sudo vim /etc/systemd/system.conf
+DefaultTimeoutStartSec=10s
+DefaultTimeoutStopSec=10s
+DefaultRestartSec=100ms
+###保存
+sudo systemctl daemon-reload#更改生效
+```
 
 
