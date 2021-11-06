@@ -78,3 +78,18 @@ IgnorePkg   = egl-wayland # 大概是这些
 
 # timeshift
 https://zhuanlan.zhihu.com/p/346602946
+# 关机开机卡顿
+开源显卡驱动，或者引导，或者电源管理方案问题
+参考如下
+https://blog.csdn.net/Tangcuyuha/article/details/80298500
+
+重点如下
+编辑/etc/default/grub文件，再该文件下查找GRUB_CMDLINE_LINUX=”“一行，修改为：
+```bash
+GRUB_CMDLINE_LINUX="reboot=efi"//我的本子是efi引导
+GRUB_CMDLINE_LINUX="reboot=bios"    
+GRUB_CMDLINE_LINUX="reboot=acpi"
+GRUB_CMDLINE_LINUX="reboot=pci"
+```
+
+
