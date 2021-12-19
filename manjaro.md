@@ -100,5 +100,34 @@ DefaultRestartSec=100ms
 ###保存
 sudo systemctl daemon-reload#更改生效
 ```
+# 将/opt /usr /home /var挂载到其他盘
+1. /home /opt /var 可以根据如下教程进行\
+[动态拓展参考教程](https://www.howtogeek.com/442101/how-to-move-your-linux-home-directory-to-another-hard-drive/)
+
+
+2. **挂载/usr分区时建议使用u盘启动盘操作\
+操作完后，在u盘环境下手动挂载四个分区然后manjaro-chroot进本机环境，然后执行如下操作**
+```bash
+nano /etc/fstab # 找到/usr分区的那一行，将<pass>的值设置成0。
+
+nano /etc/mkinitcpio.conf #在HOOK中增加shutdown和usr。
+#如下
+HOOK="base udev autodetect modconf block filesystems keyboard shutdown usr fsck"
+
+#最后别忘了执行创建ramdisk环境。
+mkinitcpio -p linuxxxx #xxx是内核版本号
+
+```
+# 日常问题
+## 软件库更新问题
+```bash
+sudo pacman -Syy
+错误：GPGME 错误：无数据
+错误：未能同步所有数据库（未预期的错误）
+```
+执行如下即可：
+```bash
+sudo rm -R /var/lib/pacman/sync
+```
 
 
