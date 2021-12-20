@@ -129,5 +129,20 @@ sudo pacman -Syy
 ```bash
 sudo rm -R /var/lib/pacman/sync
 ```
-
-
+## 键盘映射（Xmodmap ）
+使用是前\
+xmodmap 不提供恢复初始化到功能，所以在使用如下指令备份map表，防止map出错
+```bash
+xmodmap -pke > /etc/X11/.Xmodmap.bak
+```
+如果出错导致键盘不能正常使用，可以重启。如果是外接键盘，重新插拔即可恢复
+**映射**：
+1.
+```bash
+vim ~/.xmodmap
+```
+2.在其中加入映射关系，然后
+3.保存，执行
+```bash
+xmodmap ~/.xmodmap
+```
