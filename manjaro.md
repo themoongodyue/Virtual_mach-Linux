@@ -125,6 +125,8 @@ sudo pacman -Syy
 错误：GPGME 错误：无数据
 错误：未能同步所有数据库（未预期的错误）
 ```
+**主要是AUR和官方库冲突造成的（pamca里面AUR的确认没跟官方库冲突再更新，尽量少用AUR）**
+
 执行如下即可：
 ```bash
 sudo rm -R /var/lib/pacman/sync
