@@ -186,3 +186,12 @@ nopriv_user=userftp
 
 1、chmod 777 /home/userftp
 2、chown -R root.root /home/userftp
+
+## 配置Qv2ray
+到Qv2ray官方github仓库：https://github.com/Qv2ray/Qv2ray \
+下载运行appimage版的qv2ray（由于manjaro的仓库原因）\
+安装v2ray内核
+    yay -S v2ray
+
+
+https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
