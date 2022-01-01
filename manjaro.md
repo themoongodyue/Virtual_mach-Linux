@@ -148,3 +148,41 @@ vim ~/.xmodmap
 ```bash
 xmodmap ~/.xmodmap
 ```
+## FTP服务
+下载vsftp
+```bash
+sudo pacman -S vsftpd
+```
+配置服务
+```bash
+sudo vim /etc/vsftpd.conf
+###
+anonymous_enable=NO  ##拒绝匿名
+local_enable=YES  ##允许本机用户（及非专门用户）
+write_enable=YES  ## 允许写
+local_umask=022
+```
+重启服务
+```bash
+sudo systemctl restart vsftpd
+```
+创建专门用户
+```bash
+useradd -g ftp -d /home/userftp -s /sbin/nologin userftp
+passwd userftp
+```
+配置用户
+```bash
+sudo vim /etc/vsftpd.conf
+###
+nopriv_user=userftp
+```
+重启服务\
+排查问题
+1、查看/etc/ftpusers ，确保账号没有在这个文件内。\
+2、修改/etc/pam.d/vsftpd\
+将auth required pam_shells.so修改为->auth required pam_nologin.so 即可\
+3、重启vsftpd
+
+1、chmod 777 /home/userftp
+2、chown -R root.root /home/userftp
