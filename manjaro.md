@@ -195,3 +195,17 @@ nopriv_user=userftp
 
 
 https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
+
+
+
+####
+## 建议安装顺序
+软件源\
+archcn源\
+aru（yay）\
+输入法fcitx5\
+edge\
+pip\
+解决开机卡死问题\
+anaconda\
+美化\
