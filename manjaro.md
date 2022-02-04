@@ -199,7 +199,7 @@ https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
 
 
 ####
-## 建议安装顺序
+# 建议安装顺序
 软件源\
 archcn源\
 aru（yay）\
