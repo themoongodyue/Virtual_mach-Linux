@@ -206,6 +206,7 @@ archcn源\
 aru（yay）\
 解决开机卡死问题\
 输入法fcitx5\
+()[https://blog.csdn.net/m0_47627464/article/details/113790309]\
 edge\
 anaconda\
 美化
