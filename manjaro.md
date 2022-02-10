@@ -78,6 +78,7 @@ IgnorePkg   = egl-wayland # 大概是这些
 
 # timeshift
 https://zhuanlan.zhihu.com/p/346602946
+# 
 # 关机开机卡顿
 开源显卡驱动，或者引导，或者电源管理方案问题
 参考如下
@@ -203,9 +204,8 @@ https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
 软件源\
 archcn源\
 aru（yay）\
+解决开机卡死问题\
 输入法fcitx5\
 edge\
-pip\
-解决开机卡死问题\
 anaconda\
-美化\
+美化
