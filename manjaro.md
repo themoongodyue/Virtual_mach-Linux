@@ -78,7 +78,10 @@ IgnorePkg   = egl-wayland # 大概是这些
 
 # timeshift
 https://zhuanlan.zhihu.com/p/346602946
-# 
+# 开机卡死
+开机shift进入grub按e删除quit若发现是
+**双显卡切换问题**
+则安装optimus-switch-sddm(参考前面的b站教程)
 # 关机开机卡顿
 开源显卡驱动，或者引导，或者电源管理方案问题
 参考如下
