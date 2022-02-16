@@ -7,8 +7,8 @@
 ```
     In [1]: from IPython.lib import passwd
     In [2]: passwd()
-    Enter password: 
-    Verify password: 
+    Enter password:
+    Verify password:
     Out[2]: '这里是密码'
 ```    
  **3.设置服务器配置文件**
@@ -45,3 +45,4 @@ wsl --import Ubuntu-20.04 d:\wsl-ubuntu20.04 d:\wsl-ubuntu20.04.tar --version 2
 ```
 ubuntu2004 config --default-user Username #Username为默认用户名
 ```
+test
