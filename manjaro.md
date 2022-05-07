@@ -218,3 +218,16 @@ aru（yay）\
 edge\
 anaconda\
 美化
+
+# archlinux gnome42 记录
+
+## shell(顶栏) 拓展
+paru -S gnome-shell-extension-xxxx \
+或者通过浏览器 https://extensions.gnome.org
+## 主题更换
+paru -S xxxx \
+或者通过浏览器 gnome-look(经常打不开)
+## 输入法
+pacman -S ibus-rime   #(中州陨)
+## 终端美化
+oh-my-zsh
