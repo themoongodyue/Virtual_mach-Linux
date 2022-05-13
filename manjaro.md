@@ -207,6 +207,9 @@ https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
 [Fx键映射规则更改](https://www.cnblogs.com/orochihuang/p/15193699.html)
 
 
+## java多版本切换
+```sudo archlinux-java set java-12-jdk```
+
 ####
 # 建议安装顺序
 软件源\
