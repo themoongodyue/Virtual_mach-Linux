@@ -201,7 +201,8 @@ nopriv_user=userftp
 
 
 https://www.buptstu.cn/2021/02/07/Manjaro%E9%85%8D%E7%BD%AEQv2ray-SSR/
-
+## 配置v2raya
+只接受xray内核。
 
 ## 键盘Fx键映射混乱
 [Fx键映射规则更改](https://www.cnblogs.com/orochihuang/p/15193699.html)
