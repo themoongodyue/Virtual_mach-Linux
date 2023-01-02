@@ -74,4 +74,11 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     mount -t btrfs -o compress=zstd /dev/sdxn /mnt
 ```
 **btrfs快照功能**\
+一般是给子卷拍快照
+```bash
 
+    #可读写快照
+    btrfs subvolume snapshot /mnt/test /mnt/.test_01
+    #只读快照
+    btrfs subvolume snapshot -r /mnt/test /mnt/.test_02
+```
