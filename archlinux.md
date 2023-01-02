@@ -21,7 +21,7 @@ makepkg -si
 
 # 还未进行的
 
-## btrfs
+## **btrfs**
 **btrfs一般不用其碎片整理功能\
 在fstab中设置如下即可关闭碎片整理**
 ```bash
@@ -82,3 +82,20 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     #只读快照
     btrfs subvolume snapshot -r /mnt/test /mnt/.test_02
 ```
+**btrfs文件系统克隆**\
+利用只读快照完成
+```bash
+
+    #举例：只克隆根目录，根目录在sda2，要把它克隆到sdb1上并引导。
+    # 只有根目录和boot目录的情况
+    mount -t btrfs /dev/sdb1 /mnt
+    btrfs subvolume snapshot -r / /.newroot #创建跟的只读快照.newroot
+    btrfs send /.newroot | btrfs receive /mnt/ #发送到目标分区(sdb1)上
+    btrfs send /.newroot | ssh root@ipaddress "btrfs receive /mnt/" #通过ssh远程发送快照
+    btrfs subvolume snapshot /mnt/.newroot /mnt/.root #在目标分区上创建可读写快照
+    mv /mnt/.root/* /mnt #将快照的内容复制到新的根目录里
+
+    vim /mnt/etc/fstab #修改新的根目录的fstab的uuid
+    vim /boot/grub/grub.cfg #修改grub的uuid（boot分区是单独挂载的不和/在一块）
+```
+
