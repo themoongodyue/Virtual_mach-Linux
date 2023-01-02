@@ -98,4 +98,16 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     vim /mnt/etc/fstab #修改新的根目录的fstab的uuid
     vim /boot/grub/grub.cfg #修改grub的uuid（boot分区是单独挂载的不和/在一块）
 ```
+**ext3/4离线转换成btrfs**\
+可利用liveusb完成
+```bash
 
+    #以下操作在liveusb环境中进行
+    umount /mnt #卸载以保证离线
+    btrfs-convert /dev/sda2 #进行转换
+    blkid #查看uuid
+    mount /dev/sda2 /mnt #挂载来修改fstab的uuid
+    vim /mnt/etc/fstab
+    mount /dev/sda1 /mnt/boot #挂载boot分区修改grub.cfg的uuid
+    vim /mnt/boot/grub/grub.cfg
+```
