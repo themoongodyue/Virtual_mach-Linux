@@ -1,8 +1,8 @@
 # 安装
 
-https://arch.icekylin.online/prologue.html
-
-https://archlinuxstudio.github.io/ArchLinuxTutorial/#/
+https://arch.icekylin.online/prologue.html  基于btrfs
+ 
+https://archlinuxstudio.github.io/ArchLinuxTutorial/#/  基于ext4
 
 # gnome拓展的配置文件
 
@@ -45,7 +45,7 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     btrfs filesystem balance /test #进行负载均衡
     btrfs device remove /dev/sda5 /test #移除快设备
 ```
-**btrfs的文件系统级磁盘阵列**
+**btrfs的文件系统级磁盘阵列**\
 在格式化文件系统时进行
 ```bash
     #例子: -L data 取名为data; -d raid10 数据块为raid10; -m raid1 元数据块为raid1(一般和数据块相同即可); -f 选取相应的分区
@@ -53,3 +53,25 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     #挂载第一个即可
     mount /dev/sda1 /test
 ```
+**btrfs子卷**\
+表现上类似目录，但有自己的uuid，即可以看作已经挂载的分区\
+可以用目录操作进行删除等操作，也有子卷的专属操作
+```bash
+
+    #创建/mnt/test子卷
+    btrfs subvolume create /mnt/test
+    # 创建 / 目录子卷
+    btrfs subvolume create /mnt/@ #@的这种要单独挂载
+    # 创建 /home 目录子卷
+    btrfs subvolume create /mnt/@home 
+    #@表示顶级子卷
+```
+**btrfs透明压缩**\
+挂载时启用透明压缩
+```bash
+
+    #以zstd算法进行透明压缩存储
+    mount -t btrfs -o compress=zstd /dev/sdxn /mnt
+```
+**btrfs快照功能**\
+
