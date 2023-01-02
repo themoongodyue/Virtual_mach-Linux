@@ -45,3 +45,9 @@ UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
     btrfs filesystem balance /test #进行负载均衡
     btrfs device remove /dev/sda5 /test #移除快设备
 ```
+**btrfs的文件系统级磁盘阵列**
+在格式化文件系统时进行
+```bash
+    #例子: -L data 取名为data; -d raid10 数据块为raid10; -m raid1 元数据块为raid1; -f 选取相应的分区
+    mkfs.btrfs -L data -d raid10 -m raid1 -f /dev/sda1 /dev/sda2 /dev/sda3
+```
