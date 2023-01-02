@@ -18,3 +18,12 @@ https://archlinuxstudio.github.io/ArchLinuxTutorial/#/
 makepkg -si
 ```
 即可完成构建
+
+# 还未进行的
+
+## btrfs
+btrfs一般不用其碎片整理功能\
+在fstab中设置如下即可关闭碎片整理
+```bash
+UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
+```
