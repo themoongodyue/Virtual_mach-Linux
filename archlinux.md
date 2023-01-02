@@ -27,3 +27,13 @@ btrfs一般不用其碎片整理功能\
 ```bash
 UUID=XXXXXXXX   /home   btrfs   noautodefrag,defaults 0 0
 ```
+btrfs文件系统的收缩
+```bash
+
+    btrfs filesystem usage /test  #查看文件系统的使用情况
+    btrfs filesystem resize -120G /test #缩小100G，但先多缩一点
+    umount /test #卸载
+    cfdisk /dev/sda1 #使用cfdisk将分区resize到小100G，这样会更精准
+    mount /dev/sda1 /test #重新挂载
+    btrfs filesystem resize max /test #扩容到最大，完成最初的收缩100G目的
+```
