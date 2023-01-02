@@ -36,4 +36,12 @@ btrfs文件系统的收缩
     cfdisk /dev/sda1 #使用cfdisk将分区resize到小100G，这样会更精准
     mount /dev/sda1 /test #重新挂载
     btrfs filesystem resize max /test #扩容到最大，完成最初的收缩100G目的
+
+```
+btrfs文件系统的--在线添加和删除块设备（硬盘）
+```bash
+mount /dev/sda4 /test
+btrfs device add /dev/sda5 /test #新添加的设备（sda5）不必格式化文件系统，只要类型是linux filesystem即可
+btrfs filesystem balance /test #进行负载均衡
+btrfs device remove /dev/sda5 /test #移除快设备
 ```
