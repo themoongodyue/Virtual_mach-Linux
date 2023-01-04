@@ -19,6 +19,25 @@ makepkg -si
 ```
 即可完成构建
 
+# 键盘相关
+## Fn键的设置
+$$
+\begin{array}{|c|c|c|}
+\hline \text { 值 } & \text { 含义 } & \text { 用途 } \\
+\hline 0 & \text { disable } & \text { 废掉Fn键, 按了Fn也是F1-F12本身的功能 } \\
+\hline 1 & \text { fkeyslast } & \text { 功能键F1-F12本身的功能靠后, 也就是默认一直按下Fn键 } \\
+\hline 2 & \text { fkeysfirst } & \text { 默认使用F1-F12键本身的功能, 要用实现特殊功能需要先按Fn再按F1-F12 } \\
+\hline
+\end{array}
+$$
+```bash
+
+    cd /etc/modprobe.d
+    touch hid_apple.conf
+    echo options hid_apple fnmode=2 > hid_apple.conf
+    # 重启，永久生效
+
+```
 # 还未进行的
 
 ## **btrfs**
